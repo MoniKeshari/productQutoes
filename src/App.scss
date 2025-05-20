@@ -1,0 +1,342 @@
+// === Color Variables ===
+$color-light-grey: #e9ecef;
+$color-dark-grey: #333;
+$color-border-grey: #ccc;
+$color-body-bg: #94979b03;
+$color-red: #d9534f;
+$color-blue: #0275d8;
+$color-sky: #4dbde8;
+$color-soft-pink: #ffd6e6;
+$color-pink-knob: #ff69b4;
+$color-text-main: #191818;
+$color-header-bg: #f0f0f0;
+$color-track-bg: #d3d3d3;
+$color-track-knob: #e0e0e0;
+$color-alt-grey: #f8f9fa;
+$color-grey-border-bottom: #ddd;
+$primay-white-color: #fff;
+$color-quote-header: #949191;
+$color-circle-div: red;
+
+// === Font Sizes ===
+$font-xs: 0.75rem;
+$font-sm: 0.85rem;
+$font-md: 1rem;
+$font-lg: 1.25rem;
+$font-xl: 1.5rem;
+$font-quote-name: 18px;
+$font-table: 14px;
+$font-support: 12px;
+$font-info: 10px;
+$font-button: 12px;
+
+// === Shadows ===
+$shadow-knob: 0 3px 8px rgba(0, 0, 0, 0.3);
+
+// === Heights ===
+$toggle-height: 1rem;
+$toggle-knob: 1.6rem;
+$footer-height: 64px;
+$row-height: 24px;
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, sans-serif;
+  background-color: $color-body-bg;
+}
+
+.app {
+  font-family: Inter, sans-serif;
+  color: #000;
+  padding: 10px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $color-border-grey;
+
+    h2 {
+      font-size: $font-xl;
+    }
+
+    .icons span {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .support {
+    color: red;
+    font-size: $font-support;
+    margin-top: 5px;
+  }
+
+  .toggle-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    .btn {
+      font-size: $font-button;
+      padding: 5px 10px;
+    }
+  }
+
+  .quotes-table {
+    width: 100%;
+    font-size: $font-table;
+
+    thead {
+      background: $color-header-bg;
+      th {
+        text-align: left;
+        padding: 5px;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid $color-grey-border-bottom;
+
+        td {
+          padding: 5px;
+          vertical-align: middle;
+        }
+
+        .red {
+          color: $color-red;
+          font-weight: bold;
+        }
+
+        .blue {
+          color: $color-blue;
+          font-weight: bold;
+        }
+
+        .info {
+          display: flex;
+          flex-direction: column;
+          font-size: $font-info;
+        }
+      }
+    }
+  }
+
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: $color-alt-grey;
+    border-top: 1px solid $color-grey-border-bottom;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+
+    .nav-item {
+      text-align: center;
+      font-size: $font-button;
+      color: $color-dark-grey;
+
+      i {
+        display: block;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.app-container p {
+  margin-bottom: 0;
+}
+
+.toolbox {
+  border-radius: 5px;
+  background-color: #d3dcde;
+}
+
+.btnbox {
+  padding: 10px;
+  gap: 12px;
+
+  p {
+    text-align: center;
+    font-weight: 500;
+  }
+}
+
+.custom-thead th {
+  background-color: $color-light-grey;
+  border: none;
+  padding: 0.5rem;
+}
+
+thead.rounded-top {
+  border-radius: 0.5rem 0.5rem 0 0;
+  overflow: hidden;
+  display: table-header-group;
+}
+
+.custom-switch .form-check-input {
+  position: relative;
+  width: 3rem;
+  height: $toggle-height;
+  background-color: $color-track-bg;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  overflow: visible;
+  outline: none;
+  box-shadow: none;
+}
+
+.custom-switch .form-check-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.custom-switch .form-check-input::before {
+  content: "";
+  position: absolute;
+  top: -0.4rem;
+  left: 0rem;
+  width: $toggle-knob;
+  height: $toggle-knob;
+  background-color: $color-track-knob;
+  border-radius: 50%;
+  box-shadow: $shadow-knob;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.custom-switch .form-check-input:checked {
+  background-color: $color-soft-pink;
+}
+
+.custom-switch .form-check-input:checked::before {
+  background-color: $color-pink-knob;
+  transform: translateX(1.4rem);
+}
+
+.circle-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $color-sky;
+  color: $primay-white-color;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+  margin: 1rem auto;
+
+  input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid $color-border-grey;
+    border-radius: 5px;
+  }
+
+  i {
+    position: absolute;
+    left: 1.3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    font-size: 1rem;
+  }
+
+  .form-control {
+    width: 100%;
+    padding-left: 2.3rem;
+    height: 40px;
+    border: 1px solid $color-border-grey;
+    border-radius: 8px;
+  }
+}
+
+.circle-div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-circle-div;
+  color: $primay-white-color;
+}
+
+.td-height {
+  height: $row-height;
+}
+
+.sky-color {
+  color: $color-sky;
+}
+
+.row-border {
+  border-bottom: 1px solid #bab4b4;
+}
+
+.td-content {
+  font-size: 13px;
+  font-weight: 400;
+  color: $color-text-main;
+}
+
+.quote-name {
+  font-size: $font-quote-name;
+  font-weight: 700;
+  color: $color-dark-grey;
+}
+
+.text-sm {
+  font-size: $font-xs;
+  font-weight: 600;
+}
+
+.text-lg {
+  font-size: $font-lg;
+  font-weight: 700;
+}
+
+.quotes-header {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: $color-quote-header;
+}
+
+.sticky-footer {
+  position: sticky;
+  bottom: 0;
+  height: $footer-height;
+  z-index: 999;
+  background-color: $color-light-grey;
+  border-top: 1px solid $color-border-grey;
+}
+
+.no-data-row td {
+  height: 200px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0;
+}
+
+.no-data-message {
+  font-size: 1rem;
+  color: #999;
+}
+
+.divider {
+  width: 2px;
+  background-color: black;
+  height: auto;
+  margin: 0 1rem;
+}
